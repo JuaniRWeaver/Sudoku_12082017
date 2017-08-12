@@ -1,0 +1,40 @@
+import numpy as np
+import math as m
+dim = 9
+coordenada = m.sqrt(dim)
+#defino la matriz
+x = np.zeros((dim,dim))
+x[0] = [5,3,4,0,0,0,9,1,2]
+x[1] = [6,7,2,0,0,0,3,4,8]
+x[2] = [1,9,8,0,0,0,5,6,7]
+x[3] = [0,0,0,7,6,1,0,0,0]
+x[4] = [0,0,0,8,5,3,0,0,0]
+x[5] = [0,0,0,9,2,4,0,0,0]
+x[6] = [9,6,1,0,0,0,2,8,4]
+x[7] = [2,8,7,0,0,0,6,3,5]
+x[8] = [3,4,5,0,0,0,1,7,9]
+i = 0
+fila = [0] * dim
+columna = [0] * dim
+submatriz = [0] * dim
+while i < dim :
+    fila[i] = x[i]
+    print ("Fila" + str(i))
+    print (fila[i])
+    i = i + 1
+i = 0
+while i < dim :
+    columna[i] = x[:,i]
+    print ("columna" + str(i))
+    print (columna[i])
+    i = i + 1
+i = 0
+while i < dim :
+    resto = i%coordenada
+    division = int (i/coordenada)
+    submatriz[i] = x[coordenada*division:coordenada*(division+1),resto*coordenada:coordenada*(resto+1)]
+    print ("submatriz" + str(i))
+    print (submatriz[i])
+    i = i + 1
+print ("La matriz es:")
+print(x)
